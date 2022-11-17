@@ -1,0 +1,495 @@
+
+.right
+{
+    float:right;
+    left: 12px;
+    width:85%;
+    bottom: 18px; 
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.container{
+    padding: 12px;
+}
+.form
+{
+    width: 300px;
+    float: right;
+    position: relative;
+    bottom: 55px;
+}
+.head
+{
+    display:block;
+    margin-left:115px;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-top: 0;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+.fullRight
+{
+    position: relative;
+    top: 5px;
+    height: 1000px;
+    background-color:linear-gradient(#f9fbfc,#e3e7f0);
+}
+.align
+{
+    padding: 49px;
+    position: relative;
+    bottom: 38px;
+}
+#but
+{
+    padding-left: 750px;
+    padding-top: 30px;
+}
+#serial
+{
+   width: 30px;  
+}
+
+#submit
+{
+    padding-left: 350px;
+    position: relative;
+    bottom: 1px;
+}
+
+#state
+{
+    position: relative;
+    bottom:25px;
+}
+#bottom
+{
+    position: relative;
+    bottom:5px; 
+}
+#addnew1
+{
+    position: relative;
+    padding-left: 1000px;
+    top: 5px;
+}
+#side
+{   position: relative;
+    padding-right: 38px;
+    bottom: 11px;
+    
+}
+#addButton{
+    display: inline-block;
+    height: 38px;
+    width: 140px;
+    margin-left: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    background-color: #ffc502 !important;
+    border-color: #ffc502 !important;
+    border:none
+  }
+.grid{
+    margin-top:60px;
+    
+}
+#mess
+{
+    color:red;
+}
+
+#date
+{ 
+    
+    margin-right: 55px;
+    width: 209px;
+    padding: 0;
+    height:34px;
+    box-sizing: border-box;
+    text-indent: 0%;
+    border-bottom: none ;
+    
+}
+.Category
+{
+    width:250px;
+}
+#header{
+width:100%;
+height:60px;
+margin:0;
+background: white;
+box-sizing: border-box;
+border: 1px wheat;   
+box-shadow: 3px 3px 3px #aaaaaa;
+
+}
+.e-icons e-circle-info::before{
+    content: '\e800';
+    
+}
+.e-icons e-circle-info{
+    position: relative;
+    left:200px;
+}
+
+.e-icons line-small::before{
+    content:'\e725';
+}
+
+
+#bell
+{
+    position: relative;
+    top:20px;
+    padding-left: 970px;
+    font-size: 21px;
+}
+
+#profile
+{
+    position: relative;
+    top: 19px;
+    left: 25px;
+}
+.hard
+{
+    color: #ffc502;
+    position: relative;
+    top:5px;
+}
+
+#profile-img {
+    float: right;
+    margin-top: 12px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    position: relative;
+    right: 37px;
+}
+
+.asset:hover
+{
+    background-color: #ffc502;
+}
+#inputState{
+    box-shadow: none;
+}
+#ddlelement{
+    box-shadow: none;
+    height: 38px;
+}
+#inputAddress2{
+    box-shadow: none;
+}
+#datepicker1{
+    height: 38px;
+}
+#datepicker2{
+    height: 38px;
+}
+.modal-body label{
+    padding-top: 12px;
+}
+h3{
+    font-size: 24px;
+}
+.btn-primary{
+    background-color:#ffc502 ;
+    color: black;
+
+}
+
+.btn-primary:hover{
+    background-color: royalblue;
+
+}
+ @media screen and (max-width: 1252px){
+    .right
+    {
+       position: relative;
+       left:35px;
+       top:10px
+   }
+   body
+    {
+      height: 700px;
+    }
+    .head
+    {
+      margin-left:220px;
+    }
+    
+    #addButton
+    {
+       width: 200px;
+      position: relative;
+      right:200px;
+      margin-top: 8px;
+    }
+    #date
+    {
+       width: 270px;
+       position: relative;
+       right:150px;
+      margin-top: 38px;
+    }
+  
+ }
+ @media screen and (max-width: 1212px){
+    .right
+    {
+      position: relative;
+      left:30px;
+      bottom: 70px;
+      width:80%
+   }
+   body
+    {
+      height: 700px;
+    }
+    .head
+    {
+      margin-left:220px;
+    }
+    
+    #addButton
+    {
+       width: 200px;
+      position: relative;
+      right:200px;
+      margin-top: 8px;
+    }
+    #date
+    {
+       width: 270px;
+       position: relative;
+       right:150px;
+      
+      margin-top: 18px;
+    }
+  
+  }
+
+  /* @media screen and (max-width: 1002px){
+    .right
+    {
+      position: relative;
+      left:30px;
+      bottom: 70px;
+      width:80%
+   }
+    .head
+    {
+      margin-left:320px;
+    }
+    
+    #addButton
+    {
+       width: 200px;
+      position: relative;
+      right:200px;
+      margin-top: 28px;
+    }
+    #date
+    {
+       width: 270px;
+       position: relative;
+       right:150px;
+      margin-top: 8px;
+    }
+  
+  } */
+
+
+  @media screen and (max-width: 992px){
+    .right
+    {
+      position: relative;
+      left:30px;
+      bottom: 70px;
+      width:80%
+   }
+   body
+    {
+      height: 700px;
+    }
+    .head
+    {
+      margin-left:310px;
+    }
+    #addButton
+    {
+        width: 270px;
+        margin-left: 357px;
+      margin-bottom: 4px;
+    }
+    #date
+    {
+       width: 270px;
+      margin-left: 247px;
+      margin-top: 8px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+  .right
+  {
+    position: relative;
+    left:30px;
+    bottom: 70px;
+    width:70%
+
+ }
+ body
+    {
+      height: 700px;
+    }
+  
+    .head
+ {
+   margin-left:150px;
+ }
+ #addButton
+ {
+    width: 244px;
+   margin-left: 290px;
+   margin-bottom: 4px;
+ }
+ #date
+ {
+    width: 284px;
+   margin-left:215px;
+ }
+
+}
+@media screen and (max-width: 730px)
+{
+  .right
+     {
+      position: relative;
+      left:50px;
+      bottom: 70px;
+      width:70%
+
+    }
+    body
+    {
+      height: 700px;
+    }
+    
+    .head
+    {
+      margin-left:250px;
+    }
+    #addButton
+    {
+        width: 254px;
+      margin-left:410px;
+      margin-bottom: 4px;
+    }
+    #date
+    {
+        width:254px;
+      margin-left: 41px;
+      margin-top: 65px;
+    }
+}
+@media screen and (max-width: 700px)
+{
+  .right
+     {
+      position: relative;
+      left:50px;
+      bottom: 70px;
+      width:70%
+
+    }
+    body
+    {
+      height: 700px;
+    }
+    .head
+    {
+      margin-left:250px;
+    }
+    #addButton
+    {
+        width: 254px;
+      margin-left:410px;
+      margin-bottom: 4px;
+    }
+    #date
+    {
+        width:254px;
+      margin-left: 61px;
+      margin-top: 65px;
+    }
+}
+@media screen and (max-width: 576px){
+     .right
+     {
+      position: relative;
+      left:50px;
+      bottom: 70px;
+      width:70%
+
+    }
+    body
+    {
+      height: 700px;
+    }
+    .head
+    {
+      margin-left:250px;
+    }
+    #addButton
+    {
+        width: 254px;
+      margin-left:440px;
+      margin-bottom: 4px;
+    }
+    #date
+    {
+        width:254px;
+      margin-left: 381px;
+      margin-top: 5px;
+    }
+}
+
+  @media screen and (max-width: 540px){
+    .right
+    {
+      position: relative;
+      left:50px;
+      bottom: 70px;
+      width:70%
+
+    }  
+    body
+    {
+      height: 700px;
+    }
+   .head
+   {
+    position: relative;
+      bottom: 5px;
+     margin-left:250px;
+   }
+   #addButton
+   {
+    position: relative;
+      bottom: 19px;
+     margin-left:410px;
+   }
+   #date
+   {
+     margin-left: 350px;
+     position: relative;
+     bottom: 20px;
+   }
+}

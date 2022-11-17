@@ -1,0 +1,185 @@
+.container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+div{
+    display: block;
+}
+
+.top-row{
+    padding-top: 10px;
+}
+
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+    
+}
+.col-lg-8 .col-md-8{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.row.col-lg-8.empty-row {
+    padding: 10px;
+}
+
+h3{
+    color: #2c3e50;
+    text-align: left;
+    font-size: 24px;    
+    margin-left:180px;
+}
+.col-lg-4{
+    position: relative;
+
+}
+.col-lg-2 .col-md-2{
+    position: relative;   
+   min-height: 1px;
+}
+.dashboard-card{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.col-lg-6{   
+  
+ position: relative;
+ min-height: 1px;
+}
+.chartArea{
+    
+    padding: 10px;
+    
+}
+
+.e-card .e-card-header{
+    display: flex;
+    flex-direction: row;
+    min-height: 22.5px;
+    padding: 12px;
+    width: inherit;
+}
+
+#sub{ 
+    font-size: 14px;
+    color: white;
+}
+#basic-license{
+    height: 80px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #60d6a2;
+    text-align: center;
+    box-shadow: 0 2px 8px #7b77885e;
+
+}
+.e-card{
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    width: 100%;
+    line-height: 36px;
+    min-height: 36px;
+    display: flex;
+    font-size: 15px;
+    flex-direction: column;
+    
+}
+
+#basic-request{
+    height: 80px;
+    background-color:#b991da;
+    box-shadow: 0 2px 8px #7b77885e;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    
+}
+#List{
+    
+    font-size: 12px;
+    
+}
+#sample{
+    
+    height: 595px;   
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #7b77885e;
+    overflow-y:scroll; 
+    background: #fff;
+    margin-top: 10px;
+    overflow: hidden;
+    
+}
+.list-surface{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#container{
+     
+    height: 296px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #7b77885e;
+    background: #fff;    
+}
+#contain{
+    height: 296px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #7b77885e;
+    background: #fff;  
+    
+    
+   
+}
+#map{   
+    height: 296px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #7b77885e;
+    background: #fff;
+    
+    
+}
+
+.e-card-title {
+    color: white;
+    border-bottom: none;
+    text-decoration: none;
+}
+.e-card-header-caption a{
+    text-decoration: none;
+}
+
+@media screen and (min-width:992px) {
+    .col-lg-8{
+        width: 60.66%;
+        float:left;
+        
+    }
+    .col-lg-2{
+        width: 15%;
+        float: left;
+        left: 105px;
+    }
+    .col-lg-6 {
+        width: 45%;
+        float: left;
+        left: 175px;
+        
+    }
+    
+    .col-lg-4{
+        width: 30.33%;
+        float: left;
+        left: 107px;
+    }   
+}
+

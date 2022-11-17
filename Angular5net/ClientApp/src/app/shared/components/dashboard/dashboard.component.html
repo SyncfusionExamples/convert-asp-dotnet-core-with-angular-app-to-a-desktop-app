@@ -1,0 +1,135 @@
+<div class="container-fluid">
+  <div class="row top-row">
+    <div class="col-lg-8 col-md-8">
+      <h3>Dashboard</h3>
+    </div>
+    <!-- Syncfusion card-->
+
+    <div class="col-lg-2 col-md-2  dasdboard-card">
+      <div tabindex="0" class="e-card" id="basic-request">
+        <div class="e-card-header">
+          <div class="e-card-header-caption">
+            <a routerLink="/requests">
+              <div class="e-card-title">15</div>
+              <div class="e-card-sub-title" id="sub">Requests processed</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2  dasdboard-card">
+      <div tabindex="0" class="e-card" id="basic-license">
+        <div class="e-card-header">
+          <div class="e-card-header-caption">
+            <a routerLink="/issued-license">
+              <div class="e-card-title">30</div>
+              <div class="e-card-sub-title" id="sub">License Issued</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-lg-8">
+      <!-- Syncfusion pie chart 01-->
+      <div class="row">
+
+        <div class="col-lg-6 chartArea">
+          <ejs-accumulationchart class="e-card" id="container" #pie [legendSettings]="legendSettings"
+            [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]='enableAnimation'
+            [center]='center'>
+            <e-accumulation-series-collection>
+              <e-accumulation-series name='Hardware' [dataSource]='data' [palettes]='palette2' xName='x' yName='y'
+                [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="72%" [dataLabel]="dataLabe"
+                [explode]='explode' explodeOffset='10%' [explodeIndex]='0'>
+              </e-accumulation-series>
+            </e-accumulation-series-collection>
+          </ejs-accumulationchart>
+        </div>
+
+        <!-- Syncfusion Bar chart -->
+        <div class="col-lg-6 chartArea">
+          <ejs-chart class="e-card"
+            style='  height: 296px;border-radius: 4px;box-shadow: 0 2px 8px #7b77885e;background: #fff;'
+            [chartArea]='chartArea' id='chartcontainer' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [title]='title1' [palettes]='palette1' [tooltip]='tooltip1' (load)='load1($event)'>
+            <e-series-collection>
+              <e-series [dataSource]='data2' type='Column' xName='x' yName='y' name='Laptop' width=2 [marker]='marker'
+                style="background-color: #7F9FD2;"> </e-series>
+              <e-series [dataSource]='data3' type='Column' xName='x' yName='y' name='Monitor' width=2 [marker]='marker'>
+              </e-series>
+              <e-series [dataSource]='data4' type='Column' xName='x' yName='y' name='Tablet' width=2 [marker]='marker'>
+              </e-series>
+              <e-series [dataSource]='data5' type='Column' xName='x' yName='y' name='Miscellaneous' width=2
+                [marker]='marker'> </e-series>
+            </e-series-collection>
+          </ejs-chart>
+        </div>
+
+      </div>
+
+
+
+
+      
+
+      <div class="row">
+
+
+        <!-- Syncfusion pie chart 02-->
+        <div class="col-lg-6 chartArea">
+          <ejs-accumulationchart class="e-card" id="contain" #pie [legendSettings]="legendSettings" [tooltip]="tooltip"
+            [title]="title2" (load)='load($event)' [enableAnimation]='enableAnimation' [center]='center'>
+            <e-accumulation-series-collection>
+              <e-accumulation-series name='Software License' [dataSource]='datasource' [palettes]='palette3' xName='x'
+                yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="72%"
+                [dataLabel]="dataLabe" [explode]='explode' explodeOffset='10%' [explodeIndex]='0'>
+              </e-accumulation-series>
+            </e-accumulation-series-collection>
+          </ejs-accumulationchart>
+        </div>
+
+        <!-- Syncfusion Treemap-->
+
+        <div class="col-lg-6 chartArea">
+          <ejs-treemap id='map' class="e-card" #treemap style="display:block;" [titleSettings]='titleSettings'
+            [dataSource]='dataSource' [weightValuePath]='weightValuePath' [tooltipSettings]='tooltipSettings'
+            [palette]='palette' [legendSettings]='legendSettings2' [leafItemSettings]='leafItemSettings' format='n'
+            useGroupingSeparator="true" (load)='load2($event)' (itemClick)='itemClick($event)'
+            (itemMove)='itemMove($event)'>
+            <e-levels>
+              <e-level groupPath='Category' [border]='border'>
+              </e-level>
+            </e-levels>
+          </ejs-treemap>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <!-- Syncfusion Listview-->
+    <div class="col-lg-4 list-surface">
+      <div id="sample" class="e-card">
+        <ejs-listview id='List' [dataSource]='data1' headerTitle='Recent Activities ' cssClass='e-list-template'
+          [showHeader]='true'>
+          <ng-template #template let-data1="" id="line">
+            <div class="e-list-wrapper e-list-multi-line e-list-avatar">
+              <img class="e-avatar e-avatar-circle" src={{data1.image}} />
+              <span class="e-list-item-header">{{data1.text}}</span>
+              <span class="e-list-content">{{data1.Text}}</span>
+            </div>
+          </ng-template>
+        </ejs-listview>
+      </div>
+    </div>
+  </div>
+
+</div>

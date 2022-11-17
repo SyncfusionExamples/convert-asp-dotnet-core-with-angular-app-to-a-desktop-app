@@ -1,0 +1,116 @@
+
+  <div class="content">
+  <div class="container">
+    <div class="row ">
+      <div class="col-xs-12 col-sm-12 col-lg-8 col-md-12">
+        <h3>View Issued License</h3>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-2 col-md-6">
+  
+        <button type="button" id="add-btn" (click)="open(content)" class="btn btn-warning" data-backdrop="static"
+          data-keyboard="false">Issue License</button>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-2 col-md-6">
+      
+        <ejs-daterangepicker  id="picker-date" placeholder='Select a range'> </ejs-daterangepicker>
+      
+      </div>
+  
+    </div>
+  
+  </div>
+  </div>
+  
+  <div class="source">
+    <ejs-grid width="82%" style="margin-left: 190px;margin-top: 20px;box-shadow:2px 2px 2px 2px rgb(206, 196, 196);"
+      [dataSource]='data' [allowPaging]="true" [pageSettings]="pageSettings" [allowFiltering]="true"
+      [filterSettings]="filterSettings" [editSettings]='editSettings' [toolbar]='toolbar'>
+      <e-columns>
+        <e-column field='TaskID' headerText='TaskID' textAlign='center' width=90></e-column>
+        <e-column field='Employee' headerText='Employee' width=150 textAlign="left"></e-column>
+        <e-column field='Email' headerText='Email' textAlign='left' width=180></e-column>
+        <e-column field='Software' headerText='Software' textAlign='left' width=150></e-column>
+        <e-column field='LicenseKey' headerText='License Key' textAlign='left' width=150></e-column>
+        <e-column field='IssuedOn' headerText='Issued On' textAlign='left' format='yMd' width=130></e-column>
+        <e-column textAlign='left' width=105 [commands]='commands'></e-column>
+      </e-columns>
+    </ejs-grid>
+  </div>
+  
+  
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Issue License</h4>
+      <button type="button" class="btn-close" id="click" aria-label="Close" style="border: none;"
+        (click)="modal.dismiss('Cross click')"></button>
+    </div>
+  
+    <div class="modal-body">
+      <form [formGroup]="issueForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+            <label for="Employee">Employee</label>
+            <input type="text" id="Employee" class="form-control" formControlName="Employee">
+            <div *ngIf="(submitted || f['Employee'].touched )&& f['Employee'].invalid" class="alert alert-danger">
+              <div *ngIf="f['Employee'].errors && f['Employee'].errors['required']" id="msg">
+                Field is required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="Software">Software</label>
+            <ejs-dropdownlist id="Software" [dataSource]='items' class="form-control" formControlName="Software">
+            </ejs-dropdownlist>
+          </div>
+  
+        </div>
+  
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+            <label for="LicenseAvailable">No. of available license</label>
+            <input type="text" id="LicenseAvailable" class="form-control" formControlName="LicenseAvailable">
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="LicenseKey">License Key</label>
+            <input type="text" id="LicenseKey" class="form-control" formControlName="LicenseKey">
+          </div>
+  
+        </div>
+  
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+            <label for="IssuedOn">Issued On</label>
+            <ejs-datepicker [min]='minDate' placeholder="Issued on" id="IssuedOn" class="form-control"
+              formControlName="IssuedOn">
+            </ejs-datepicker>
+            <div *ngIf="(submitted || f['IssuedOn'].touched )&& f['IssuedOn'].invalid" class="alert alert-danger">
+              <div *ngIf="f['IssuedOn'].errors && f['IssuedOn'].errors['required']" id="msg">
+                Field is required
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="form-group">
+          <label for="Textarea1">Note</label>
+          <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+        </div>
+  
+        <div class="save">
+          <button type="submit" class="btn btn-outline-dark" style="float:right"
+            (click)="modal.dismiss('Close click')">Submit
+          </button>
+        </div>
+  
+      </form>
+  
+    </div>
+  
+  </ng-template>
+  

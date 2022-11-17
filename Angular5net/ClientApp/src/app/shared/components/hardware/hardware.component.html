@@ -1,0 +1,158 @@
+
+  <div class="contents">
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-xs-12 col-sm-12 col-lg-8 col-md-12">
+        <h3 id="headline">View Hardware</h3>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-2 col-md-6">
+          <button type="button" id="addButton" (click)="open(content)" class="btn btn-warning">Add New
+              Hardware</button>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-2 col-md-6">
+  
+          <span>
+            <ejs-daterangepicker  id="rangePicker" placeholder='Select a range'>
+            </ejs-daterangepicker>
+          </span>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div>
+    <ejs-grid #grid [dataSource]='data' [allowPaging]="true" [pageSettings]="pageSettings" [toolbar]='toolbar'
+      [editSettings]='editSettings' allowFiltering='true' allowSorting='true' [filterSettings]='filterSettings'
+      width="82%">
+  
+      <e-columns>
+  
+        <e-column field='TaskID' headerText='TaskID' textAlign='Right' width='90'>
+        </e-column>
+  
+        <e-column field='Name' headerText='Name' textAlign='left' width='120'></e-column>
+        <e-column field='Category' headerText='Category' textAlign='Right' format='C2' width='120' textAlign='left'>
+        </e-column>
+        <e-column field='SerialNo' headerText='Serial No' textAlign='left' format='yMd' width='120'></e-column>
+        <e-column field='InvoiceNo' headerText='Invoice No' textAlign='Right' width='90'>
+        </e-column>
+        <e-column field='DOP' headerText='Purchase Date ' textAlign='Right' format='yMd' width='90'
+          editType='datepickeredit'></e-column>
+        <e-column field='WEO' headerText='Warranty Entry' textAlign='Right' format='yMd' width='90'
+          editType='datepickeredit'></e-column>
+        <e-column field='Status' headerText='Status' textAlign='Right' width='90'>
+        </e-column>
+        <e-column field='AssignedTo' headerText='AssignedTo' textAlign='Right' format='yMd' width='90'></e-column>
+        <e-column id="edit-opn" width='120' [commands]='commands'>
+        </e-column>
+  
+      </e-columns>
+    </ejs-grid>
+  
+  </div>
+  
+  
+  <ng-template #content let-modal>
+    <div class="modal-header" style="border-bottom: none;">
+      <h3 class="modal-title" id="modal-basic-title">Add New Hardware</h3>
+  
+      <button type="button" class="btn-close" id="click" aria-label="Close" style="border:none;"
+        (click)="modal.dismiss('Cross click')"></button>
+  
+    </div>
+  
+    <div class="modal-body" style="border-bottom: none;">
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+  
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Name">Hardware Name</label>
+            <input type="text" id="Name" class="form-control" formControlName="Name">
+  
+            <div *ngIf="(submitted || f['Name'].touched )&& f['Name'].invalid" class="alert alert-danger">
+              <div *ngIf="f['Name'].errors && f['Name'].errors['required']" id="msg">
+                Field is required
+              </div>
+              <div *ngIf="f['Name'].errors && f['Name'].errors['minlength']" id="msg">
+                Name should be 3 characters
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="Category">Category</label>
+            <ejs-dropdownlist id="Category" [dataSource]='item' class="form-control" formControlName="Category">
+            </ejs-dropdownlist>
+          </div>
+        </div>
+  
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+            <label for="SerialNo">Serial No</label>
+            <input type="text" id="SerialNo" class="form-control" formControlName="SerialNo">
+  
+            <div *ngIf="(submitted || f['SerialNo'].touched )&& f['SerialNo'].invalid" class="alert alert-danger">
+              <div *ngIf="f['SerialNo'].errors && f['SerialNo'].errors['required']" id="msg">
+                Field is required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="InvoiceNo">Invoice ID</label>
+            <input type="text" id="InvoiceNo" class="form-control" formControlName="InvoiceNo">
+  
+            <div *ngIf="(submitted ||f['InvoiceNo'].touched) && f['InvoiceNo'].invalid" class="alert alert-danger">
+              <div *ngIf="f['InvoiceNo'].errors && f['InvoiceNo'].errors['required']" id="errorMessage">
+                Field is required
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+            <label for="DOP">Date Of Purchase</label>
+            <ejs-datepicker [min]='minDate' placeholder="Purchased on" id="DOP" class="form-control"
+              formControlName="DOP"></ejs-datepicker>
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="DOP">Warranty Ends On</label>
+            <ejs-datepicker id="DOP" [min]='minDate' placeholder="Warranty date" class="form-control"
+              formControlName="WEO"></ejs-datepicker>
+          </div>
+  
+        </div>
+  
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+  
+            <label for="Status">Status</label><br>
+            <ejs-dropdownlist id="Status" [dataSource]='value' class="status-drop" class="form-control"
+              formControlName="Status"></ejs-dropdownlist>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="Textarea1">Note</label>
+          <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+        </div>
+  
+        <button class="btn btn-primary" id="save" type="submit">Submit</button>
+  
+      </form>
+    </div>
+  
+  </ng-template>
+ 

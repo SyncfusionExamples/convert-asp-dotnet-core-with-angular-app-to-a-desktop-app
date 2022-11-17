@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+.container{
+  padding: 10px;
+}
+ejs-grid {
+    margin-left: 200px;
+    color: #333;
+    margin-top: 15px;
+    font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif,
+      "-apple-system", "BlinkMacSystemFont";
+    background: linear-gradient(#f9fbfc, #e3e7f0);
+    line-height: 28.5714px;
+    font-size: 13px;
+    box-shadow: 0 2px 8px #d1ceda;
+  }
+  
+  body {
+    font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif,
+      "-apple-system", "BlinkMacSystemFont";
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    background-color: #fff !important;
+  }
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  #headline {
+    display:inline-block;
+    margin-left:125px;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-top: 0;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  
+  #addButton{
+    display: inline-block;
+    height: 38px;
+    width: 145px;
+    margin-left: 30px;
+
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    background-color: #ffc502 !important;
+    border-color: #ffc502 !important;
+    color: #373737 !important;
+  }
+  
+  
+  #rangePicker {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    width: 210px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+    box-sizing:border-box;
+    border-radius: 0;
+    border:2px solid #c8c8c8;
+    background: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2px;
+    font-weight: 600;
+    border-bottom: none !important;
+    color:blue !important;
+  }
+
+  .form-group label {
+    color: black;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .form-group input {
+    width: 200px;
+  }
+  #Category {
+    padding: 0;
+    border-bottom: white;
+  }
+  .modal-body {
+    margin: 0 15px;
+    
+  }
+  .modal-header h3 {
+    
+    text-align: center;
+    font-size: 26px;
+    line-height: -25px;
+  }
+  .alert-danger {
+    width: 190px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  #errorMessage{
+    color: red !important;
+    visibility: visible;
+  }
+  ejs-dropdownlist {
+    padding: 5px;
+    
+    
+  }
+  
+  .btn-primary {
+  color: black;
+  background-color: #ffc502 !important;
+  border: #ffc502 !important;
+  font-size: 16px;
+  font-weight: 500;
+  
+  float: right;
+}
+#save:hover{
+  background-color: royalblue;
+}
+
+  
+  @media screen and (max-width: 992px) {
+    #headline{
+    margin-left:220px;
+    }
+     #addButton{
+       margin-left:38%;
+       margin-right:0px;
+     }
+  }
+  
+  @media screen and (max-width: 720px) {
+    .contents{
+      margin-left:20%;
+    }
+  #headline{
+    margin-left:10%;
+  }
+  }
+  @media screen and (max-width: 540px) {
+
+    #headline{
+      margin-left:8%;
+    }
+    #addButton{
+      margin:10px;
+      margin-left:18%
+    }
+    #rangePicker{
+      margin:10px;
+     
+    }
+  }
+  @media screen and (max-width: 320px) {
+   
+    #headline{
+      margin-left:15%;
+    }
+    #addButton{
+      margin:10px;
+      margin-left:30%
+    }
+    #rangePicker{
+      margin:10px;
+      margin-left:30%
+
+    }
+    body{
+      margin-left:50%;
+    }
+  }
+ 
+  #Name{
+    box-shadow: none;
+  }
+  #Category{
+    box-shadow: none;
+    height: 30px;
+  }
+  #SerialNo{
+    box-shadow: none;
+  }
+  #InvoiceNo{
+    box-shadow: none;
+  }
+  #DOP{
+    height: 38px;
+  }
+  #Status{
+    height: 38px;
+  }
+  #click{
+    box-shadow: none;
+  }
+

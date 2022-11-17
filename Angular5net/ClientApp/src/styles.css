@@ -1,0 +1,152 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-angular-grids/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-navigations/styles/material.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-navigations/styles/material.css';
+
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';  
+@import '../node_modules/@syncfusion/ej2-layouts/styles/material.css';  
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-angular-lists/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-angular-buttons/styles/material.css";
+html, body { height: 100%; overflow-x:hidden; }
+body { margin: 0; padding:0 ;font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@media screen and (max-width: 768px) {
+    #headline {
+      font-size: 24px;
+      margin-left: 8%;
+      padding: 5px;
+    }
+    #icon-b {
+      margin-left: 84%;
+    }
+    .noti-n {
+      right:160px;
+    }
+  
+    #range-picker {
+      margin-left: 30%;
+    }
+    #add-btn {
+      display: inline-block;
+      font-size: 12px;
+      width: 120px;
+      font-weight: 500;
+    }
+  }
+  
+  @media screen and (max-width: 432px) {
+    body {
+      font-size: 12px;
+    }
+    ejs-grid {
+      margin: 25px;
+      font-size: 12px;
+    }
+    #icon-b {
+      margin-left: 70%;
+    }
+    .noti-n {
+      margin-left: 94%;
+    }
+    
+    #headline {
+      font-size: 26px;
+      text-align: left;
+      float: left;
+      margin-left: 0%;
+    }
+    #add-btn {
+      display: inline;
+      font-size: 12px;
+      width: 120px;
+      padding: 2px;
+      margin-left: 10%;
+    }
+  
+    ejs-daterangepicker {
+      width: 100px;
+    }
+    #range-picker {
+      margin-left: 5%;
+    }
+    #default-sidebar {
+      visibility: hidden;
+    }
+  }
+  @media screen and (max-width: 376px) {
+    body {
+      font-size: 12px;
+    }
+    ejs-grid {
+      margin: 20px;
+      font-size: 11px;
+    }
+    #icon-b {
+      margin-left: 68%;
+    }
+    #headline {
+      font-size: 24px;
+      text-align: center;
+      margin-left: 15%;
+    }
+    #add-btn {
+      display: inline;
+      font-size: 11px;
+      width: 130px;
+      padding: 5px;
+      margin-left: 0%;
+      margin-right: 10px;
+    }
+  
+    #range-picker {
+      margin-left: 5%;
+      width: 140px;
+    }
+  }
+  @media screen and (max-width: 321px) {
+    body {
+      font-size: 12px;
+    }
+    ejs-grid {
+      margin: 15px;
+      font-size: 10px;
+    }
+    #icon-b {
+      margin-left: 65%;
+    }
+    #headline {
+      font-size: 22px;
+      text-align: center;
+      margin-left: 15%;
+    }
+    #add-btn {
+      display: inline;
+      font-size: 11px;
+      width: 100px;
+      margin-left: 0%;
+      margin-right: 5px;
+    }
+  
+    #range-picker {
+      margin-left: 5%;
+      width: 100px;
+    }
+    #default-sidebar {
+      visibility: hidden;
+    }
+  }
+  

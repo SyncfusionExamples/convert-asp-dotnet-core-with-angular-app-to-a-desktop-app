@@ -1,0 +1,147 @@
+
+  <div class="contents">
+    <div class="container">
+      <div class="row">
+         <div class="col-xs-12 col-sm-12 col-lg-8 col-md-12">
+           <p  class="head">View Request</p>
+         </div>
+  
+       <div class="col" class="col-xs-12 col-sm-6 col-lg-2 col-md-6" >
+           <button type="button" id="addButton"  (click)="openModal()">Create Request</button>
+       </div>
+     
+        <div  class="col-xs-12 col-sm-6 col-lg-2 col-md-6">
+         <ejs-daterangepicker  id="date"  placeholder='Select a range'  class="form-control" ></ejs-daterangepicker>  
+        </div>   
+     </div>    
+    </div>
+  </div> 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="exampleModalLabel">Request Form</h5>
+       <button type="button" class="close"  data-dismiss="modal" (click)="dosomething()"  aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <div class="modal-body">
+      <form [formGroup]="form">
+        
+        <div class="row">
+              <label for="Employee">Employee Name</label>
+              <input type="text" class="form-control" id="Employee"   formControlName="Employee" >
+        </div>
+        <div class="row">
+            <div class="col" style="padding-top:5px ;">
+              <label for="inputState">RequestType</label>
+              <div class="form-check">
+                <input class="form-check-input"  formControlName="RequestType"  type="radio"  name="RequestType" id="exampleRadios1" value="Hardware" checked >
+                <label class="form-check-label" for="RequestType">
+                  Hardware
+                </label>
+              </div>
+              <div class="form-check1">
+                <input class="form-check-input"   formControlName="RequestType" type="radio"   name="RequestType" id="exampleRadios2" value="Software" >
+                <label class="form-check-label" for="RequestType">
+                  Software
+                </label>
+              </div>
+            </div>
+            <div class="col" >
+              <label for="ddlelement">Hardware</label>
+              <ejs-dropdownlist id='ddlelement' [dataSource]='data1' class="form-control"   formControlName="RequestedItem"></ejs-dropdownlist>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="datepicker1">RequestedOn</label>
+          <ejs-datepicker id="datepicker1"  class="form-control"  formControlName="RequestedOn"></ejs-datepicker>
+        </div>
+        <div class="col">
+            <label for="inputAddress2">Priority</label>
+            <ejs-dropdownlist id='inputAddress2' class="sta" [dataSource]='data2'  class="form-control"  formControlName="Priority" ></ejs-dropdownlist>
+        </div>
+     </div>
+     <div id="bottom">
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Note</label>
+            <div class="row">
+              <textarea id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+          </div>
+    </div>
+    <div id="submit1">
+          <button type="submit"  (click)="onsubmit()"  class="submit2">Submit Request</button>
+    </div>
+    </form> 
+    </div>
+    </div>
+  </div>
+</div>   
+
+<div class="right">
+<ejs-grid   #grid  allowFiltering='true'  [editSettings]='editSettings' [pageSettings]='pageSettings' allowSorting='true' allowPaging='true'  [dataSource]='requestData'  allowFiltering='true'  [filterSettings]='filterSettings'>
+<div class="grid">           
+<e-columns>
+                    <e-column field='TaskID' headerText='TaskID' textAlign='center' width=110></e-column>
+                    <e-column field='Employee' headerText='Employee' width=110 textAlign='left'></e-column>
+                    <e-column field='RequestType' headerText='RequestType' textAlign='left'  width=110></e-column>
+                    <e-column field='RequestedItem' headerText='RequestedItem' textAlign='left'  width=110></e-column>
+                    <e-column field='RequestedOn' headerText='RequestedItem'format='yMd' textAlign='left'  width=110></e-column>
+                    <e-column field='Priority' headerText="Priority" width=110 textAlign='left'></e-column>
+                    <e-column headerText='' width='90' [commands]='commands'></e-column>                    
+                    <e-column  headerText=''  width=190>
+                      <ng-template #template let-data>
+                        <div *ngIf="data.Status=='Approved'">
+                          <div class="approve" class="bi bi-check-circle-fill" style='color:green'>
+                            {{data.Status}}
+                          </div>
+                        </div>
+                        <div *ngIf="data.Status=='Rejected'">
+                          <div class="reject" class='bi bi-x-circle-fill' style='color: red'>
+                            {{data.Status}}
+                          </div> 
+                        </div>
+                        <div *ngIf="data.Status=='Pending'">
+                          <div  class="approve" >
+                            <button ejs-button class="btn btn-danger" id="approve" (click)="popup = true;onclick(data)" >Approve</button>
+                          </div>
+                            <div class="reject" >
+                              <button ejs-button class="btn btn-danger" id="reject" (click)="popup1 = true;onclick1(data)">Reject</button>
+                            </div>
+                    
+                        </div>
+                        <div class="overlay" *ngIf="popup">
+                        <div class="popup">
+                            <h2>Success!</h2>
+                            <a class="close" (click)="popup = false">&times;</a>
+                            <div class="message">
+                             Request accepted successfully.
+                            </div>
+                        </div >
+                        </div>
+                      </ng-template>
+                    </e-column>
+                    <e-column  headerText=''  width=120>
+                      <ng-template #template let-data>
+                       
+                        <div class="overlay" *ngIf="popup1">
+                          <div class="popup1">
+                              <h2>Success!</h2>
+                              <a class="close" (click)="popup1 = false">&times;</a>
+                              <div class="message1">
+                                 Request rejected successfully.
+                              </div>
+                          </div>
+                      </div>
+                      </ng-template>
+                    </e-column>
+                    <e-column ></e-column>
+                    <e-column ></e-column>       
+</e-columns>
+</div>
+</ejs-grid>
+</div>
+
+

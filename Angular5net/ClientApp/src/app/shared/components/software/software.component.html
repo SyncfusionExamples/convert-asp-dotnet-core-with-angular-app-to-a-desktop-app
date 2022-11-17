@@ -1,0 +1,131 @@
+
+  <div class="contents">
+    <div class="container">
+      <div class="row">
+        
+          <div  class="col-xs-12 col-sm-12 col-lg-8 col-md-12">
+            <h3  class="head" >View Software</h3>
+          </div>
+
+          <div class="col"  class="col-xs-12 col-sm-6 col-lg-2 col-md-6">
+            <div >
+              <button type="button" id="addButton"  (click)="openModal()">Add New Software</button>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-lg-2 col-md-6" >
+            
+              <ejs-daterangepicker id="date"  placeholder='Select a range'  class="form-control" ></ejs-daterangepicker>
+            
+          </div>
+      </div>  
+    </div>
+  </div>     
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header" style="border-bottom: none;border: none;border-radius: none;">
+         <h3 class="modal-title" id="exampleModalLabel">Add New Software</h3>
+         <button type="button" class="close" (click)="dosomething()" data-dismiss="modal"  aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+        <form [formGroup]="form" >
+            <div class="row">
+              <div class="col">
+                <label for="inputState">SoftwareName</label>
+                <input type="text" class="form-control" id="inputState"  formControlName="Name">
+                <div *ngIf="(submitted || f['Name'].touched) && f['Name'].invalid  ">
+                  <div id="mess"*ngIf="f['Name'].errors && f['Name'].errors['required']">
+                        This Field Is Required
+                  </div>
+                  <div id="mess"*ngIf="f['Name'].errors && f['Name'].errors['minlength']">
+                     Minium 4 characters Required
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <label for="ddlelement">Edition</label>
+                <input type="text" class="form-control" id="ddlelement"   formControlName="Edition">
+              </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="inputState">Version</label>
+                  <input type="text" class="form-control" id="inputState"  formControlName="Version">
+                </div>
+                <div class="col">
+                  <label for="ddlelement">Vendor</label>
+                  <input type="text" class="form-control" id="ddlelement"   formControlName="Vendor">
+                </div>
+                </div>
+          <div class="row">
+            <div class="col">
+              <label for="inputAddress">LicenseType</label>
+              <ejs-dropdownlist id='ddlelement'  [dataSource]='data1' class="form-control"  formControlName="LicenseType"></ejs-dropdownlist>
+            </div>
+            <div class="col">
+                <label for="inputAddress2">NoofLicense</label>
+                <input type="number"  class="form-control" id="inputAddress2" formControlName="NoofLicense">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <label for="datepicker1">DateofPurchase</label>
+              <ejs-datepicker id="datepicker1" [min]='minDate' class="form-control" formControlName="DateofPurchase"   ></ejs-datepicker>
+            </div>
+            <div class="col">
+              <label for="datepicker2">ExpiredOn</label>
+              <ejs-datepicker  id="datepicker2" [min]='minDate'class="form-control"  formControlName="ExpiredOn"></ejs-datepicker>
+            </div>
+            </div>
+              <div class="row">
+                <div class="Category">
+                  <label for="bbbb">Catagory</label>
+        `        <ejs-dropdownlist id='ddlelement' class="sta" [dataSource]='data2' class="form-control"  formControlName="Catagory" ></ejs-dropdownlist>
+                </div>
+              </div>
+            <div id="bottom">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Note</label>
+                <div class="row">
+                  <textarea id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+          <div id="submit">
+            <button type="submit"  class="btn btn-primary"  (click)="onsubmit()" >submit</button>
+          </div>
+        </form>
+       </div>
+     </div>
+    </div>
+  </div>
+    <div id="side">
+    <div class="form">
+    <form [formGroup]="form" > 
+    </form>
+    </div><br>
+    <div class="right"> 
+    <ejs-grid #grid [dataSource]='softwareData' [editSettings]='editSettings' [toolbar]='toolbar'allowSorting='true' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings' >
+    <div class="grid">
+    <e-columns>
+    <e-column field='TaskID' headerText='Task ID' textAlign='center' width=90  [validationRules]='taskidrules'></e-column>
+    <e-column field='Name' headerText='Software' width=120 textAlign='left' [validationRules]='namerules'></e-column>
+    <e-column field='Edition' editType='dropdownedit' [edit]='editparams' headerText='Edition' textAlign='left' format='C2' width=80 [validationRules]='categoryrules'></e-column>
+    <e-column field='Version' headerText='Version' textAlign='left' format='yMd' width=100  [validationRules]='serialnorules'></e-column>
+    <e-column field='Vendor' headerText='Vendor' textAlign='left' format='yMd' width=100 [validationRules]='invoicerules'></e-column>
+    <e-column field='LicenseType' headerText='LicenceType' textAlign='left'  width=70 [validationRules]='LicenseTyperules' ></e-column>
+    <e-column field='LicenseCount' headerText='LicenseCount' textAlign='left'  width=90 ></e-column>
+    <e-column field='DOP' editType='' [edit]='editparams' headerText='Purchase Date' textAlign='left' format='yMd' width=100 [validationRules]='statusrules'  ></e-column>
+    <e-column field='ExpiredOn' headerText='ExpiredOn' textAlign='left' format='yMd' width=90  [validationRules]='assignedrules'></e-column>
+    <e-column field='Category' headerText='Category' textAlign='left' format='yMd' width=90  [validationRules]='assignedrules'></e-column>
+    <e-column  width='90' [commands]='commands'></e-column>
+    </e-columns>
+    </div>
+    </ejs-grid>
+    </div>
+    </div>    
+
+
